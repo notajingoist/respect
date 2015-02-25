@@ -10,143 +10,118 @@
 //     margin: 0 auto;
 //     // overflow: hidden;
 // }
-.video-player {
-    position: absolute;
-    z-index: -100;
-    top: 0;
-    left: 0;
-    // width: 100%;
-    // height: 100%;
-    overflow: hidden;
-    background-color: #000;
 
-    // background: #000 url('../../images/test-short-still.png') no-repeat;
-    // background-size: cover;
-
-    video {
-        // @extend %center-element-horiz;
-        width: 1920;
-        height: 1080;
-
-        //javascript to make height 100% when screen height is greater than width?
-    }
-}
-
-.intro-bg {
-    background: #751a1a url('../../images/title.png') center center no-repeat; //#5a4a3d
+.main-content {
+    background: url('../../images/stovetop.jpg') center center no-repeat;
     background-size: cover;
-}
+    width: 100%;
+    min-height: calc(100% - 75px);
+    // height: calc(100% - 75px);
+    // max-width: 960px;
+    margin: 0 auto;
+    // margin-top: 75px;
+    // margin-bottom: 75px;
+    text-align: center;
+    padding: 50px;
+    a {
+        color: $blue;
+        &:hover {
+            color: #fff;
 
-.stillframe-bg {
-    // background: #000 url('../../images/test-short-still.png') no-repeat;
-    // background-size: cover;
-}
 
-.btn-clip {
-    @include transition(all 0.2s ease-in-out 0);
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 175px;
-    height: 175px;
-    // opacity: 0.3;
-    // border-radius: 100%;
-    &:hover {
-        cursor: pointer;
-    }
-    z-index: 100;
-}
-
-@include keyframes(clip-hover) {
-    0% {
-
-        // background: url('../../images/tattoo2-2.png') center center no-repeat;
-        // background-size: contain;
-    }
-    33% {
-        @include transform(rotate(30deg));
-        // background: url('../../images/tattoo2-1.png') center center no-repeat;
-        // background-size: contain;
-    }
-    66% {
-        @include transform(rotate(40deg));
-        // background: url('../../images/tattoo2-2.png') center center no-repeat;
-        // background-size: contain;
-    }
-    100% {
-        @include transform(rotate(50deg));
-        // background: url('../../images/tattoo2-1.png') center center no-repeat;
-        // background-size: contain;
+        }
     }
 }
 
-.hover-off {
-    // background-color: blue;
-    // background: url('../../images/tattoo2-2.png') center center no-repeat;
-    // background-size: contain;
+.panel{
+    // @include vertical-align(50%);
+    background-color: #fff;
+    color: #000;
+    width: 100%;
+    padding: 40px;
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: left;
 }
 
-.hover-on {
-    @include transform(rotate(10deg));
-    // @include animation('clip-hover .5s infinite')
-    // background-color: red;
-    // background: url('../../images/tattoo2-1.png') center center no-repeat;
-    // background-size: contain;
+.gallery {
+    img {
+        width: 25%;
+        padding: 0 10px 20px;
+        &:not(:nth-child(4n)) {
+            // padding-right: 20px;
+        }
+    }
 }
 
-#btn-clip1 {
-    left: 9.5%;
-    top: 63%;
+.panel-section {
+    &:not(:last-child) {
+       &:after {
+           content: '';
+           height: 1px;
+           width: 95%;
+           display: block;
+           background-color: $grey;
+           margin: 40px auto 30px;
+           // margin: 20px 50px;
+       }
+    }
 
-    width: 28%;
-    height: 20%;
+    .title {
+        font-size: 22px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        display: inline-block;
+        position: relative;
+        letter-spacing: 1.5px;
+        &:after {
+            position: absolute;
+            content: '';
+            height: 5px;
+            width: 100%;
+            display: block;
+            background-color: $blue;
+            // margin: 20px 50px;
+        }
+    }
 
-    // width: 471px;//325px;
-    // height: 276px;//170px;
+    .content {
+        width: 95%;
+        margin: 0 auto;
+        font-size: 14px;
+        line-height: 2;
+        // text-align: justify;
+        ul {
+            padding: 5px 50px;
+            list-style: disc;
+            li {
 
-    background: url('../../images/mermaid.png') center center no-repeat;
-    background-size: contain;
+            }
+        }
 
-    // &.hover-on {
-    //     // @include transition(all 0.2s ease-in-out 0);
-    //     @include transform(rotate(10deg));
-    // }
+        img {
+            padding: 20px 100px;
+            width: 100%;
+        }
 
-    // &.hover-off {
-    //     // background: url('../../images/mermaid.png') center center no-repeat;
-    //     // background-size: contain;
-    // }
+    }
 }
 
-#btn-clip2 {
-    left: 35%;
-    top: 65%;
-
-    width: 25%;
-    height: 20%;
-
-    // width: 322px;//197px;
-    // height: 278px;//170px;
-
-    background: url('../../images/flower.png') center center no-repeat;
-    background-size: contain;
+.main-text {
+    @include vertical-align(200px);
+    color: #fff;
+    font-size: 240px;
+    font-weight: bold;
+    letter-spacing: 5px;
 }
-
-#btn-clip3 {
-    left: 53%;
-    top: 65%;
-
-    width: 20%;
-    height: 20%;
-
-    // width: 77px;
-    // height: 277px;
-
-    background: url('../../images/script.png') center center no-repeat;
-    background-size: contain;
+.sub-text {
+    // color: $blue;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 20px;
+    display: inline-block;
+    position: relative;
+    letter-spacing: 1.5px;
 }
-
-
-// audio, canvas, video {
-//     display: inline-block;
-// }

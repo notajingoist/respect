@@ -35,8 +35,20 @@ app.get('/about', function(req, res) {
     });
 });
 
+app.get('/initiatives', function(req, res) {
+    res.render('initiatives', {
+        title: 'R.E.S.P.E.C.T.'
+    });
+});
+
 app.get('/calendar', function(req, res) {
     res.render('calendar', {
+        title: 'R.E.S.P.E.C.T.'
+    });
+});
+
+app.get('/gallery', function(req, res) {
+    res.render('gallery', {
         title: 'R.E.S.P.E.C.T.'
     });
 });

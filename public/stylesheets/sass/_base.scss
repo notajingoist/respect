@@ -13,6 +13,7 @@ body {
     // width: 100%;
     // position: relative;
     height: 100%;
+
     font-family: 'Source Sans Pro', sans-serif;
     color: #000;
     line-height: 1.2;
@@ -22,6 +23,7 @@ body {
 }
 
 a {
+    @include transition(all 0.2s ease-in-out 0);
     text-decoration: none;
     color: inherit;
     // color: #000;
@@ -78,9 +80,11 @@ input, select, textarea, button {
 
 header {
     width: 100%;
-    background-color: #61dff6;
+    background-color: $blue;
     height: 75px;
-    padding: 20px;
+    padding: 20px 0 0 20px;
+    letter-spacing: 2px;
+    // padding: 20px;
     // text-align: center;
 }
 
@@ -114,6 +118,7 @@ header {
     }
 
     nav {
+        font-size: 16px;
         // @include vertical-align(100px);
         display: inline-block;
         width: 75%;
@@ -146,6 +151,12 @@ header {
                         // background-color: red;
                     }
                     position: relative;
+                    &.active {
+                        &:after {
+                            background-color: #fff;
+                            // background-color: red;
+                        }
+                    }
                     &:hover {
                         &:after {
                             background-color: #fff;

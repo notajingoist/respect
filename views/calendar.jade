@@ -2,11 +2,26 @@ extend layout
 block content
     header
         div(class='header-text')
-            div(class='title').
-                R.E.S.P.E.C.T. CALENDAR
+            div(class='title')
+                a(href='/').
+                    R.E.S.P.E.C.T.
             nav
                 ul
                     li
-                        a(href='')
-            //- div(class='subtitle').
-            //-     (Resnik Evaluation of Sanitation and Personal Exploitation of Communal Things)
+                        a(href='about').
+                            about
+                    li
+                        a(href='initiatives').
+                            initiatives
+                    li
+                        a(href='calendar', class='active').
+                            calendar
+                    li
+                        a(href='gallery').
+                            gallery
+                    li
+                        a(href='mailto:respectresnik@gmail.com').
+                            contact
+    div(class='main-content')
+        div(class='main-text').
+            NO
