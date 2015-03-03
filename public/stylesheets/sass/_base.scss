@@ -58,11 +58,11 @@ input, select, textarea, button {
 }
 
 ::selection {
-    background: #ff0;
+    background: $yellow;
 }
 
 ::-moz-selection {
-    background: #ff0;
+    background: $yellow;
 }
 
 .hide {

@@ -1,21 +1,134 @@
 extend layout
 block content
     div(class='main-content')
+        div(class='gallery-preview hide closed')
+            div(class='description')
+            div(class='icon icon-x').
+                ✕
+            div(class='icon icon-l').
+                ❮
+            div(class='icon icon-r').
+                ❯
+        section(class='panel')
+            div(class='panel-section', id='spring-cleaning')
+                div(class='title') Browse Gallery
+                div(class='content')
+                    ol(class='browse')
+                        li
+                            a(href='#specimen-set-a').
+                                Specimen Set A
+                        li
+                            a(href='#specimen-set-b').
+                                Specimen Set B
+                        li
+                            a(href='#specimen-set-c').
+                                Specimen Set C
+                        li
+                            a(href='#specimen-set-d').
+                                Specimen Set D
+                        li
+                            a(href='#specimen-set-e').
+                                Specimen Set E
+                        li
+                            a(href='#gallery-opening').
+                                Gallery Opening
         section(class='panel gallery')
-            img(src='/images/1.JPG')
-            img(src='/images/2.JPG')
-            img(src='/images/3.JPG')
-            img(src='/images/4.JPG')
-            img(src='/images/5.JPG')
-            img(src='/images/6.JPG')
-            img(src='/images/7.JPG')
-            img(src='/images/8.JPG')
-            img(src='/images/9.JPG')
-            img(src='/images/10.JPG')
-            img(src='/images/11.JPG')
-            img(src='/images/12.JPG')
-            img(src='/images/13.JPG')
-            img(src='/images/14.JPG')
-            img(src='/images/15.JPG')
-            img(src='/images/16.JPG')
-            img(src='/images/17.JPG')
+            - var n = 1
+            div(class='panel-section', id='specimen-set-a')
+                div(class='title') Specimen Set A
+                br
+                while n < 14
+                    - if (n === 1)
+                        div(class='gallery-image')
+                            img(src='/images/thumbs/gallery-opening/#{n}.jpg', class='gallery-album', data-src='gallery-opening/', data-no='#{n}', data-ext='.jpg')
+                    - else if (n === 89)
+                        div(class='gallery-image')
+                            img(src='/images/thumbs/gallery-opening/#{n}.jpg', class='gallery-album', data-src='gallery-opening/', data-no='#{n}', data-ext='.jpg')
+                    - else
+                        div(class='gallery-image')
+                            img(src='/images/thumbs/gallery-opening/#{n}.jpg', class='gallery-album', data-src='gallery-opening/', data-no='#{n}', data-ext='.jpg')
+                    - n++
+            - var n = 14
+            div(class='panel-section', id='specimen-set-b')
+                div(class='title') Specimen Set B
+                br
+                while n < 26
+                    - if (n === 1)
+                        div(class='gallery-image')
+                            img(src='/images/thumbs/gallery-opening/#{n}.jpg', class='gallery-album', data-src='gallery-opening/', data-no='#{n}', data-ext='.jpg')
+                    - else if (n === 89)
+                        div(class='gallery-image')
+                            img(src='/images/thumbs/gallery-opening/#{n}.jpg', class='gallery-album', data-src='gallery-opening/', data-no='#{n}', data-ext='.jpg')
+                    - else
+                        div(class='gallery-image')
+                            img(src='/images/thumbs/gallery-opening/#{n}.jpg', class='gallery-album', data-src='gallery-opening/', data-no='#{n}', data-ext='.jpg')
+                    - n++
+            - var n = 26
+            div(class='panel-section', id='specimen-set-c')
+                div(class='title') Specimen Set C
+                br
+                while n < 47
+                    - if (n === 1)
+                        div(class='gallery-image')
+                            img(src='/images/thumbs/gallery-opening/#{n}.jpg', class='gallery-album', data-src='gallery-opening/', data-no='#{n}', data-ext='.jpg')
+                    - else if (n === 89)
+                        div(class='gallery-image')
+                            img(src='/images/thumbs/gallery-opening/#{n}.jpg', class='gallery-album', data-src='gallery-opening/', data-no='#{n}', data-ext='.jpg')
+                    - else
+                        div(class='gallery-image')
+                            img(src='/images/thumbs/gallery-opening/#{n}.jpg', class='gallery-album', data-src='gallery-opening/', data-no='#{n}', data-ext='.jpg')
+                    - n++
+            - var n = 47
+            div(class='panel-section', id='specimen-set-d')
+                div(class='title') Specimen Set D
+                br
+                while n < 56
+                    - if (n === 1)
+                        div(class='gallery-image')
+                            img(src='/images/thumbs/gallery-opening/#{n}.jpg', class='gallery-album', data-src='gallery-opening/', data-no='#{n}', data-ext='.jpg')
+                    - else if (n === 89)
+                        div(class='gallery-image')
+                            img(src='/images/thumbs/gallery-opening/#{n}.jpg', class='gallery-album', data-src='gallery-opening/', data-no='#{n}', data-ext='.jpg')
+                    - else
+                        div(class='gallery-image')
+                            img(src='/images/thumbs/gallery-opening/#{n}.jpg', class='gallery-album', data-src='gallery-opening/', data-no='#{n}', data-ext='.jpg')
+                    - n++
+            - var n = 56
+            div(class='panel-section', id='specimen-set-e')
+                div(class='title') Specimen Set E
+                br
+                while n < 57
+                    - if (n === 1)
+                        div(class='gallery-image')
+                            img(src='/images/thumbs/gallery-opening/#{n}.jpg', class='gallery-album', data-src='gallery-opening/', data-no='#{n}', data-ext='.jpg')
+                    - else if (n === 89)
+                        div(class='gallery-image')
+                            img(src='/images/thumbs/gallery-opening/#{n}.jpg', class='gallery-album', data-src='gallery-opening/', data-no='#{n}', data-ext='.jpg')
+                    - else
+                        div(class='gallery-image')
+                            img(src='/images/thumbs/gallery-opening/#{n}.jpg', class='gallery-album', data-src='gallery-opening/', data-no='#{n}', data-ext='.jpg')
+                    - n++
+            - var n = 57
+            div(class='panel-section', id='gallery-opening')
+                div(class='title') Gallery Opening
+                br
+                while n < 90
+                    - if (n === 1)
+                        div(class='gallery-image')
+                            img(src='/images/thumbs/gallery-opening/#{n}.jpg', class='gallery-album', data-src='gallery-opening/', data-no='#{n}', data-ext='.jpg')
+                    - else if (n === 89)
+                        div(class='gallery-image')
+                            img(src='/images/thumbs/gallery-opening/#{n}.jpg', class='gallery-album', data-src='gallery-opening/', data-no='#{n}', data-ext='.jpg')
+                    - else
+                        div(class='gallery-image')
+                            img(src='/images/thumbs/gallery-opening/#{n}.jpg', class='gallery-album', data-src='gallery-opening/', data-no='#{n}', data-ext='.jpg')
+                    - n++
+                //- div(class='gallery-image')
+                //-     img(src='/images/thumbs/gallery-opening/2.jpg', class='gallery-album')
+                //- div(class='gallery-image')
+                //-     img(src='/images/thumbs/gallery-opening/3.jpg', class='gallery-album')
+                //- div(class='gallery-image')
+                //-     img(src='/images/thumbs/gallery-opening/4.jpg', class='gallery-album')
+                //- div(class='gallery-image')
+                //-     img(src='/images/thumbs/gallery-opening/5.jpg', class='gallery-album')
+
