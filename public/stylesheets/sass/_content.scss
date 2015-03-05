@@ -46,7 +46,7 @@
     background: $blue;
     border: 5px solid #fff;
     padding: 5px 10px;
-    font-size: 12px;
+    font-size: 24px;
     // text-transform: uppercase;
     &:hover {
         @include transition(opacity 0.2s ease-in-out 0);
