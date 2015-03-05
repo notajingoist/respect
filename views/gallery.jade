@@ -1,5 +1,7 @@
 extend layout
 block content
+    div(class='back-to-top hide')
+        ⇧ back to top
     div(class='main-content')
         div(class='gallery-preview hide closed')
             div(class='description')
@@ -15,22 +17,22 @@ block content
                 div(class='content')
                     ol(class='browse')
                         li
-                            a(href='#specimen-set-a').
+                            a(href='#specimen-set-a', class='browse-item').
                                 Specimen Set A
                         li
-                            a(href='#specimen-set-b').
+                            a(href='#specimen-set-b', class='browse-item').
                                 Specimen Set B
                         li
-                            a(href='#specimen-set-c').
+                            a(href='#specimen-set-c', class='browse-item').
                                 Specimen Set C
                         li
-                            a(href='#specimen-set-d').
+                            a(href='#specimen-set-d', class='browse-item').
                                 Specimen Set D
                         li
-                            a(href='#specimen-set-e').
+                            a(href='#specimen-set-e', class='browse-item').
                                 Specimen Set E
                         li
-                            a(href='#gallery-opening').
+                            a(href='#gallery-opening', class='browse-item').
                                 Gallery Opening
         section(class='panel gallery')
             - var n = 1

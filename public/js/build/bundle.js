@@ -10,15 +10,20 @@ var SITE = {
         this.$window = $(window);
         this.$document = $(document);
         this.$body = $('body');
+        this.$htmlBody = $('html, body');
+        this.$gallery = $('.gallery');
         this.$galleryImage = $('.gallery-image');
         this.$galleryPreview = $('.gallery-preview');
         this.$galleryDescription = $('.description');
         this.$iconL = $('.icon-l');
         this.$iconR = $('.icon-r');
         this.$iconX = $('.icon-x');
+        this.$backToTop = $('.back-to-top');
+        this.$browseItem = $('.browse-item');
         this.thumbImagesPathLength = 14;
         this.thumbHeightRatio = 0.665;
 
+        this.backToTopHeight = this.$gallery.offset().top;
         this.setDescriptions();
     },
 
@@ -86,19 +91,9 @@ var SITE = {
             this.galleryOpening[i] = '';
         }
 
-        // for (var i = 1; i <= 90; i++) {
-        //     if (i >= 1 && i <= 5) {
-        //         this.galleryOpening[i] = 'no. ' + i + ' / specimen: swab from stovetop / date: c. february 2015 / description: cotton swab with light brown crust';
-        //     } else {
-        //         this.galleryOpening[i] = '';
-        //     }
-        // }
-
         this.descriptions = {
             galleryOpening: this.galleryOpening
         }
-
-        console.log(this.descriptions.galleryOpening);
     },
 
     bindEvents: function() {
@@ -106,8 +101,42 @@ var SITE = {
         this.$iconX.on('click', this.closeAlbum.bind(this));
         this.$iconL.on('click', this.prevImage.bind(this));
         this.$iconR.on('click', this.nextImage.bind(this));
+        this.$backToTop.on('click', this.scrollToTop.bind(this));
+        this.$browseItem.on('click', this.scrollToSection.bind(this));
         this.$window.on('resize', this.resizeThumbs.bind(this));
+        this.$window.on('scroll', this.backToTop.bind(this));
         this.$document.on('keydown', this.checkKey.bind(this));
+    },
+
+    scrollToSection: function(e) {
+        e.preventDefault();
+        var $el = $(e.currentTarget);
+        var anchor = $el.attr('href');
+        var offset = $(anchor).offset().top;
+        this.$htmlBody.animate({scrollTop: offset}, 300);
+        setTimeout(function() {
+            window.location.hash = anchor.slice(0);
+        }, 300);
+    },
+
+    scrollToTop: function(e) {
+        e.preventDefault();
+        this.$htmlBody.animate({scrollTop: 0}, 300);
+        setTimeout(function() {
+            window.location.hash = '';
+        }, 300);
+    },
+
+    backToTop: function(e) {
+        e.preventDefault();
+        var $el = $(e.currentTarget);
+        if ($el.scrollTop() > this.backToTopHeight) {
+            this.$backToTop.fadeIn();
+            console.log('fading in');
+        } else {
+            this.$backToTop.fadeOut();
+            console.log('fading out');
+        }
     },
 
     resizeThumbs: function(e) {
@@ -118,11 +147,9 @@ var SITE = {
     checkKey: function(e) {
         if (!this.$galleryPreview.hasClass('closed')) {
             if (e.which === 37) { //left
-                console.log('left');
                 this.prevImage();
 
             } else if (e.which === 39) { //right
-                console.log('right');
                 this.nextImage();
             }
         }
@@ -140,7 +167,6 @@ var SITE = {
            this.$galleryPreview.css({'background': '#000 url("../../images/' + newSrc + '") center center no-repeat', 'background-size': 'contain'});
            this.$galleryPreview.data({src: src, no: no, ext: ext});
            this.$galleryDescription.html(this.descriptions['galleryOpening'][no]);
-           // console.log(this.$galleryPreview.data());
 
            if (no <= 1) {
                this.$iconL.addClass('hide');
@@ -168,7 +194,6 @@ var SITE = {
             this.$galleryPreview.css({'background': '#000 url("../../images/' + newSrc + '") center center no-repeat', 'background-size': 'contain'});
             this.$galleryPreview.data({src: src, no: no, ext: ext});
             this.$galleryDescription.html(this.descriptions['galleryOpening'][no]);
-            console.log(this.$galleryPreview.data());
 
             if (no <= 1) {
                 this.$iconL.addClass('hide');
@@ -192,10 +217,8 @@ var SITE = {
         var no = $img.data('no');
         var ext = $img.data('ext');
         var fullSrc = src + no + ext;
-        // var src = $img.attr('src').slice(this.thumbImagesPathLength);
 
         this.$galleryPreview.data({src: src, no: no, ext: ext});
-        console.log(this.$galleryPreview.data());
 
         if (no <= 1) {
             this.$iconL.addClass('hide');

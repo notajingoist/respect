@@ -36,6 +36,28 @@
     }
 }
 
+.back-to-top {
+    // @include transition(opacity 0.2s ease-in-out 0);
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 99;
+    color: #fff;
+    background: $blue;
+    border: 5px solid #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+    // text-transform: uppercase;
+    &:hover {
+        @include transition(opacity 0.2s ease-in-out 0);
+        cursor: pointer;
+        // background: #fff;
+        // color: $blue;
+        // border: 5px solid $blue;
+        opacity: 0.5;
+    }
+}
+
 .panel{
     // @include vertical-align(50%);
     background-color: #fff;
