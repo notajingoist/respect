@@ -34,7 +34,7 @@ var SITE = {
             4: 'no. 4 / specimen: cotton swab / date: circa feb. 2015 / description: cotton swab with burnt black smears, sample from stovetop',
             5: 'no. 5 / specimen: cotton swab / date: circa feb. 2015 / description: burnt black smears and oily brown crust, sample from stovetop',
             6: 'no. 6 / specimen: glass vial / date: circa feb. 2015 / description: glass vial containing assorted peppercorn, taken from various flat surfaces (countertop, stovetop, floor)',
-            7: 'no. 7 / specimen: glass vial / date: circa feb. 2015 / description: glass vial containing enoki mushrooms,taken from various flat surfaces (countertop, stovetop, floor)',
+            7: 'no. 7 / specimen: glass vial / date: circa feb. 2015 / description: glass vial containing enoki mushrooms, taken from various flat surfaces (countertop, stovetop, floor)',
             8: 'no. 8 / specimen: glass vial / date: circa feb. 2015 / description: glass vial containing pieces of popcorn, taken from various flat surfaces (countertop, stovetop, floor)',
             9: 'no. 9 / specimen: glass vial / date: circa feb. 2015 / description: glass vial containing burnt crusts, taken from various flat surfaces (countertop, stovetop, floor)',
             10: 'no. 10 / specimen: glass vial / date: circa feb. 2015 / description: glass vial containing assorted pickled vegetables, taken from various flat surfaces (countertop, stovetop, floor)',
